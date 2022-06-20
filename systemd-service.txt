@@ -1,0 +1,19 @@
+[Unit]
+Description=Spider Honeypoy
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sebastian
+WorkingDirectory=/opt/apps/spiderloops
+
+ExecStart=/opt/apps/spiderloops/spiderloops
+
+StandardOutput=file:/opt/apps/spiderloops/log/spiderloops.log
+StandardError=file:/opt/apps/spiderloops/log/spiderloops.log
+
+[Install]
+WantedBy=multi-user.target
